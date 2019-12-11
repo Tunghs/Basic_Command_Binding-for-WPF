@@ -10,10 +10,11 @@
         <TextBox HorizontalAlignment="Left" Height="40" Margin="99,44,0,0"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top" Width="255"
-                 Text="{Binding MessageText, Mode=OneWayToSource}"/>
+                 x:Name="txtMyText"/>
         <Button HorizontalAlignment="Left" Height="42" Margin="99,102,0,0"
                 VerticalAlignment="Top" Width="255"
                 Content="메세지 보여주기"
-                Command="{Binding DisplayMessageCommand}"/>
+                Command="{Binding DisplayMessageCommand}"
+                CommandParameter="{Binding ElementName=txtMyText, Path=Text}"/>
     </Grid>
 </Window>

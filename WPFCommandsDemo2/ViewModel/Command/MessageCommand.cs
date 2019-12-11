@@ -10,10 +10,10 @@ namespace WPFCommandsDemo2.ViewModel.Command
     public class MessageCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-        private Action _execute;
+        private Action<string> _execute;
 
         // 실제 명령 수행에 사용되는 Action을 선언하고 생성자를 추가한다.
-        public MessageCommand(Action execute)
+        public MessageCommand(Action<string> execute)
         {
             // 생성자로 전달되는 함수명을 실제 실행할 명령(_execute)으로 대입한다.
             _execute = execute;
@@ -28,7 +28,7 @@ namespace WPFCommandsDemo2.ViewModel.Command
         // 실제 명령을 수행하는 함수인 Execute 메서드에는 _execute를 수행하도록 함.
         public void Execute(object parameter)
         {
-            _execute.Invoke();
+            _execute.Invoke(parameter as string);
         }
     }
 }
