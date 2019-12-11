@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:WPFCommandsDemo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <!--ViewModel을 리소스에 등록함으로써 XAML에서만 Command 바인딩을 가능하게 함-->
+    <Window.Resources>
+        <local:ViewModel x:Key="vm"/>
+    </Window.Resources>
     <Grid>
-        
+        <Button Content="Button" HorizontalAlignment="Left" Height="89" 
+                Margin="152,83,0,0" VerticalAlignment="Top" Width="178" 
+                Command="{Binding MyCommand, Source={StaticResource vm}}"/>
     </Grid>
 </Window>
