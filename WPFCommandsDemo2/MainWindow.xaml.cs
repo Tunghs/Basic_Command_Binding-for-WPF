@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFCommandsDemo2.ViewModel;
 
 namespace WPFCommandsDemo2
 {
@@ -23,6 +24,8 @@ namespace WPFCommandsDemo2
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new MessageViewModel();
         }
     }
 }
